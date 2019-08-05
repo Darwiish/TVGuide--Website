@@ -1,25 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import ListOfPrograms from "./components/ListOfPrograms";
+import UserLogin from "./components/UserLogin";
+import TvChannels from "./components/TvChannels";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">TV Guide</div>
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to={"/"} className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/loginpage"} className="nav-link">
+                  LoginPage
+                </Link>{" "}
+              </li>
+              <li className="nav-item">
+                <Link to={"/postProgram"} className="nav-link">
+                  Post Programs
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <br />
+        <Switch>
+          <Route exact path="/loginpage" render={props => <UserLogin />} />
+          <Route exact path="/postProgram" render={props => <ProgramPost />} />
+          <Route
+            exact
+            path="/program/allprograms"
+            render={props => <ListOfPrograms />}
+          />
+          <Route exact path="/" render={props => <TvChannels />} />
+          <Route
+            path="/show-program/:id"
+            render={props => <ProgramPage {...props} />}
+          />
+          <Route
+            path="/category/:categ/:area"
+            render={props => <FilterJobs {...props} />}
+          />
+          <Route
+            path="/category/:categ"
+            render={props => <AreaPage {...props} />}
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
