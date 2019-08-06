@@ -9,24 +9,24 @@ class ProgramPage extends Component {
                 currentchan : props.match.params.chan,
                 programs: [
                 {
-                    url: "/northdenmark",
-                    name: "DRAMA"
+                    url: "/mellemøsten",
+                    name: "ANNE OG ANDERS I MELLEMØSTEN"
                 },
                 {
-                    url: "/zealand",
-                    name: "Zealand"
+                    url: "/eurohistori",
+                    name: "Europas historie"
                 },
                 {
-                    url: "/centraldenmark",
-                    name: "Central Denmark"
+                    url: "/førsteblik",
+                    name: "Gift ved første blik USA"
                 },
                 {
-                    url: "/capitalregion",
-                    name: "Capital Region"
+                    url: "/ramasjangsommer",
+                    name: "Sommer i Ramasjang"
                 },
                 {
-                    url: "/southerndenmark",
-                    name: "Southern Denmark"
+                    url: "/Phd",
+                    name: "Ph.d cup 2019"
                 }
             ] };
         };
