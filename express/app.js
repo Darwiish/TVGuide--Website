@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-//const morgan = require('morgan');
+const morgan = require('morgan');
 const cors = require("cors"); /* CORS is a node.js package for providing a Connect/Express middleware that can be used to */
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
@@ -17,7 +17,7 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, '../build')));
 
-let Job = require("./DataAccess/ChannelSchema.model");
+let Job = require("./DataAccess/ProgramSchema.model");
 let User = require("./DataAccess/UserSchema.model");
 
 app.use((req, res, next) => {
@@ -80,12 +80,12 @@ app.post('/api/registerprogram', Authentication, function(req, res) {
     program.save(res.send());
 });
 
-//invisible command for registration
-// app.post('/api/register', function(req, res) {
-//     const { username, password } = req.body;
-//     const user = new User({ username, password });
-//     user.save(res.send());
-//     });
+// invisible command for registration
+app.post('/api/register', function(req, res) {
+    const { username, password } = req.body;
+    const user = new User({ username, password });
+    user.save(res.send());
+    });
 
 app.get('/api/loginpage', Authentication, function(req, res) {
     res.send('Success, please post your AD!');
