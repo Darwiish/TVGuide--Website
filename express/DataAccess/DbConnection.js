@@ -3,7 +3,8 @@ require("dotenv").config();
 const MONGO_URL = process.env.REACT_APP_MONGO_URL;
 mongoose.connect(
   "mongodb+srv://admin:admin1@cluster0-jcmuy.mongodb.net/test?retryWrites=true",
-  { useNewUrlParser: true });
+  { useNewUrlParser: true }
+);
 
 // mongoose.connect(MONGO_URL, {
 //   useNewUrlParser: true
