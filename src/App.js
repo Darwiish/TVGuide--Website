@@ -5,13 +5,13 @@ import UserLogin from "./components/UserLogin";
 import TvChannels from "./components/TvChannels";
 import ProgramPage from "./components/ProgramPage";
 import PostProgram from "./components/PostProgram";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <div className="App">TV Guide</div>
+      <div className="App h1">TV Guide</div>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="collapse navbar-collapse" id="navbarNav">
