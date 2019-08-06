@@ -22,14 +22,14 @@ function App() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/loginpage"} className="nav-link">
-                  LoginPage
-                </Link>{" "}
-              </li>
-              <li className="nav-item">
                 <Link to={"/postProgram"} className="nav-link">
                   Post Programs
                 </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/loginpage"} className="nav-link">
+                  LoginPage
+                </Link>{" "}
               </li>
             </ul>
           </div>
