@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import ListOfPrograms from "./components/ListOfPrograms";
 import UserLogin from "./components/UserLogin";
 import TvChannels from "./components/TvChannels";
+import ProgramPage from "./components/ProgramPage";
+import PostProgram from "./components/PostProgram";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -35,7 +37,7 @@ function App() {
         <br />
         <Switch>
           <Route exact path="/loginpage" render={props => <UserLogin />} />
-          <Route exact path="/postProgram" render={props => <ProgramPost />} />
+          <Route exact path="/postProgram" render={props => <PostProgram />} />
           <Route
             exact
             path="/program/allprograms"
@@ -47,12 +49,9 @@ function App() {
             render={props => <ProgramPage {...props} />}
           />
           <Route
-            path="/category/:categ/:area"
-            render={props => <FilterJobs {...props} />}
+            path="/channel/:chan"
+            render={props => <ProgramPage {...props} />}
           />
-          <Route
-            path="/category/:categ"
-            render={props => <AreaPage {...props} />}
           />
         </Switch>
       </div>

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 
 import axios from "axios";
 
-class CompanyLogin extends Component {
+class UserLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
