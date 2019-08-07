@@ -81,7 +81,7 @@ class PostProgram extends Component {
             />
           </div>
           <div className="form-group">
-            <label> Select category </label>
+            <label> Select channel </label>
             <select
               value={this.state.job_category}
               className="form-control"

@@ -1,54 +1,44 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-
+import axios from "axios";
 
 class ProgramPage extends Component {
-    constructor(props) {
-        super(props);
-            this.state = {
-                currentchan : props.match.params.chan,
-                programs: [
-                {
-                    url: "/mellemøsten",
-                    name: "ANNE OG ANDERS I MELLEMØSTEN"
-                },
-                {
-                    url: "/eurohistori",
-                    name: "Europas historie"
-                },
-                {
-                    url: "/førsteblik",
-                    name: "Gift ved første blik USA"
-                },
-                {
-                    url: "/ramasjangsommer",
-                    name: "Sommer i Ramasjang"
-                },
-                {
-                    url: "/Phd",
-                    name: "Ph.d cup 2019"
-                }
-            ] };
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentProgram: {}
+    };
+  }
+  componentDidMount() {
+    const URL_PROGRAMS = process.env.REACT_APP_API_PROGRAMS;
+    axios.get(URL_PROGRAMS).then(response => {
+      this.setState({
+        currentProgram: response.data.find(
+          elm => elm._id === this.props.match.params.id
+        )
+      });
+    });
+  }
 
-    ProgramList() {
-        let mk = this.state.currentchan;
-        return this.state.programs.map(function(program, i) {
-            return <Link to={"/channel/" + mk + program.url}
-                         key={i} className="list-group-item list-group-item-action">{program.name}</Link>
-        });
-    }
-
-    render() {
-
-        return (
-            <div>
-                <h3>Program list</h3>
-                <div className="list-group">
-                    {this.ProgramList()}
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <duv className="row">
+        <div className="col-lg-8" style={{ backgroundColor: "#fff" }}>
+          <h3>{this.state.currentProgram.program_name}</h3>
+          <p>{this.state.currentProgram.firsDate}</p>
+        </div>
+        <div className="col-lg-1" />
+        <div className="col-lg-3" style={{ backgroundColor: "#fff" }}>
+          {/* <h4>FirstDate</h4>
+          <p className="job-detail__company-description">
+            {this.state.currentProgram.job_area}
+          </p>
+          <h4>Next Episode</h4>
+          <p className="job-detail__company-description">
+            {this.state.currentProgram.job_category}
+          </p> */}
+        </div>
+      </duv>
+    );
+  }
 }
 export default ProgramPage;
