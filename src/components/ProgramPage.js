@@ -22,20 +22,20 @@ class ProgramPage extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-lg-8" style={{ backgroundColor: "#fff" }}>
+        <div className="col-lg-8" style={{ backgroundColor: "#3333CC" }}>
           <h3>{this.state.currentProgram.program_name}</h3>
-          <p>{this.state.currentProgram.firsDate}</p>
+          <p>{this.state.currentProgram.program_name}</p>
         </div>
         <div className="col-lg-1" />
         <div className="col-lg-3" style={{ backgroundColor: "#fff" }}>
-          {/* <h4>FirstDate</h4>
-          <p className="job-detail__company-description">
-            {this.state.currentProgram.job_area}
+          <h4>FirstDate</h4>
+          <p className="First_Date">
+            {this.state.currentProgram.firstDate}
           </p>
           <h4>Next Episode</h4>
-          <p className="job-detail__company-description">
-            {this.state.currentProgram.job_category}
-          </p> */}
+          <p className="Next_Date">
+            {this.state.currentProgram.nextDate}
+          </p>
         </div>
       </div>
     );

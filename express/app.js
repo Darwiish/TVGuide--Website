@@ -74,7 +74,7 @@ app.get("/api/filteredprograms", (req, res) => {
 app.post("/api/registerprogram", Authentication, function(req, res) {
   console.log(req.body);
   const { program_name, firstDate, nextDate, program_channel } = req.body;
-  const program = new Job({
+  const program = new Program({
     program_name,
     firstDate,
     nextDate,
