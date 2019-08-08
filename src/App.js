@@ -13,8 +13,7 @@ function App() {
     <Router>
       <div className="App h1">TV Guide</div>
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="collapse navbar-collapse" id="navbarNav">
+        <nav className="navbar navbar-expand-md navbar-light bg-light">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to={"/"} className="nav-link">
@@ -32,7 +31,6 @@ function App() {
                 </Link>{" "}
               </li>
             </ul>
-          </div>
         </nav>
         <br />
         <Switch>
