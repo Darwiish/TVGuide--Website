@@ -81,11 +81,11 @@ app.post('/api/registerprogram', Authentication, function(req, res) {
 });
 
 // invisible command for registration
-// app.post('/api/register', function(req, res) {
-//     const { username, password } = req.body;
-//     const user = new User({ username, password });
-//     user.save(res.send());
-//     });
+app.post('/api/register', function(req, res) {
+    const { username, password } = req.body;
+    const user = new User({ username, password });
+    user.save(res.send());
+    });
 
 app.get('/api/loginpage', Authentication, function(req, res) {
     res.send('Success, please post your AD!');
