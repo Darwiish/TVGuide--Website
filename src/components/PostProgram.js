@@ -70,6 +70,7 @@ class PostProgram extends Component {
         alert("Error");
       });
   };
+
   calculateDaysLeft(firstDate, nextDate) {
     if (!moment.isMoment(firstDate)) firstDate = moment(firstDate);
     if (!moment.isMoment(nextDate)) nextDate = moment(nextDate);
