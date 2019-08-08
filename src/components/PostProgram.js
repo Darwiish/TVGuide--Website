@@ -5,8 +5,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 class PostProgram extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChangeStart = this.handleChangeStart.bind(this);
+    this.handleChangeNext = this.handleChangeNext.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
     this.state = {
       message: "Loading...",
       auth: true,
@@ -94,9 +99,9 @@ class PostProgram extends Component {
           <div className="form-group">
             <label> Select channel </label>
             <select
-              value={this.state.job_category}
+              value={this.state.program_channel}
               className="form-control"
-              name="job_category"
+              name="program_channel"
               onChange={this.handleInputChange}
             >
               <option value="DR1">DR1</option>
