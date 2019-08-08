@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let program = new Schema({
+let Program = new Schema({
   program_name: {
+    type: String
+  },
+  program_channel: {
     type: String
   },
   firstDate: {
@@ -13,6 +16,11 @@ let program = new Schema({
     type: String,
     format: Date
   }
+},{
+  timestamps: {
+    createdAt: true,
+    updatedAt: true,
+  },
 });
 
-module.exports = mongoose.model("program", program, "Programs");
+module.exports = mongoose.model("Program", Program, "Programs");

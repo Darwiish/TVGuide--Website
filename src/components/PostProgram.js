@@ -8,25 +8,37 @@ class PostProgram extends Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputChannel = this.handleInputChannel.bind(this);
     this.handleChangeStart = this.handleChangeStart.bind(this);
     this.handleChangeNext = this.handleChangeNext.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       message: "Loading...",
-      auth: true,
+      auth: false,
       program_name: "",
+      program_channel: 'DR1',
       firstDate: new Date(),
       nextDate: new Date()
     };
   }
 
+  // program name change
   handleInputChange = event => {
     const { value, name } = event.target;
     this.setState({
       [name]: value
     });
   };
+
+  // channel change
+  handleInputChannel = event => {
+    const { value, channel } = event.target;
+    this.setState({
+      [channel]: value
+    });
+  };
+  
   handleChangeStart(date) {
     this.setState({
       firstDate: date
@@ -48,6 +60,7 @@ class PostProgram extends Component {
       url: URL_REGJOB,
       data: JSON.stringify({
         program_name: a.program_name,
+        program_channel: a.program_channel,
         firstDate: new Date(),
         nextDate: new Date()
       }),
@@ -67,7 +80,7 @@ class PostProgram extends Component {
       })
       .catch(err => {
         console.error(err);
-        alert("Error");
+        alert("Error on posting program - PostProgram");
       });
   };
 
@@ -103,7 +116,7 @@ class PostProgram extends Component {
               value={this.state.program_channel}
               className="form-control"
               name="program_channel"
-              onChange={this.handleInputChange}
+              onChange={this.handleInputChannel}
             >
               <option value="DR1">DR1</option>
               <option value="DR2">DR2</option>
