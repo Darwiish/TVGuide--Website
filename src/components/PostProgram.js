@@ -124,14 +124,9 @@ class PostProgram extends Component {
             <input
               type="submit"
               value="Create program"
-              className="btn btn-primary"
+              className="btn btn-primary mb-2"
             />
           </div>
-          <input
-            className="btn btn-primary mb-2"
-            type="submit"
-            value="Submit"
-          />
         </form>
       );
     }
