@@ -41,7 +41,7 @@ class PostProgram extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const URL_REGJOB = process.env.REACT_APP_API_REGISTERJOB;
+    const URL_REGJOB = process.env.REACT_APP_API_REGISTERPROGRAM;
     const a = this.state;
     axios({
       method: "post",
