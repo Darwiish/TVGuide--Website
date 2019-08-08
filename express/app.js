@@ -8,7 +8,7 @@ const DbConnection = require("./DataAccess/DbConnection");
 const jwt = require('jsonwebtoken');
 
 require('dotenv').config();
-const PORT = (process.env.PORT || 3000);
+const PORT = (process.env.PORT || 8080);
 app.use(cors());
 
 app.use(bodyParser.json()); // Parse JSON from the request body

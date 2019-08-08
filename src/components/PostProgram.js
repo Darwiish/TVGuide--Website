@@ -9,7 +9,7 @@ class PostProgram extends Component {
     super();
     this.state = {
       message: "Loading...",
-      auth: false,
+      auth: true,
       program_name: "",
       firstDate: new Date(),
       nextDate: new Date()
@@ -22,6 +22,17 @@ class PostProgram extends Component {
       [name]: value
     });
   };
+  handleChangeStart(date) {
+    this.setState({
+      firstDate: date
+    });
+  }
+
+  handleChangeNext(date) {
+    this.setState({
+      nextDate: date
+    });
+  }
 
   onSubmit = event => {
     event.preventDefault();
