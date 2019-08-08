@@ -21,7 +21,7 @@ class ProgramPage extends Component {
 
   render() {
     return (
-      <duv className="row">
+      <div className="row">
         <div className="col-lg-8" style={{ backgroundColor: "#fff" }}>
           <h3>{this.state.currentProgram.program_name}</h3>
           <p>{this.state.currentProgram.firsDate}</p>
@@ -37,7 +37,7 @@ class ProgramPage extends Component {
             {this.state.currentProgram.job_category}
           </p> */}
         </div>
-      </duv>
+      </div>
     );
   }
 }
