@@ -34,8 +34,8 @@ function App() {
         </nav>
         <br />
         <Switch>
-          <Route exact path="/loginpage" render={props => <UserLogin />} />
-          <Route exact path="/postProgram" render={props => <PostProgram />} />
+          <Route exact path="/loginpage" render={props => <UserLogin {...props}/>} />
+          <Route exact path="/postProgram" render={props => <PostProgram {...props}/>} />
           <Route
             exact
             path="/program/allprograms"

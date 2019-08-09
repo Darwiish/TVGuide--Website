@@ -6,6 +6,7 @@ const cors = require("cors"); /* CORS is a node.js package for providing a Conne
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
 const jwt = require("jsonwebtoken");
+const Program = require('./DataAccess/ProgramSchema.model');
 
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
@@ -60,9 +61,12 @@ const Authentication = function(req, res, next) {
 
 /****** Routes *****/
 app.get("/api/programs", (req, res) => {
-  Program.find((err, Program) => {
-    res.json(Program);
-  });
+  Program.find({})
+        .exec((err, programs) => {
+            if (err) throw err;
+            console.log(programs)
+            res.json(programs);
+          });
 });
 
 app.get("/api/filteredprograms", (req, res) => {

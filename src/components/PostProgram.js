@@ -17,12 +17,11 @@ class PostProgram extends Component {
       message: "Loading...",
       auth: false,
       program_name: "",
-      program_channel: 'DR1',
+      program_channel: '',
       firstDate: new Date(),
       nextDate: new Date()
     };
   }
-
   // program name change
   handleInputChange = event => {
     const { value, name } = event.target;
@@ -35,8 +34,10 @@ class PostProgram extends Component {
   handleInputChannel = event => {
     const { value, channel } = event.target;
     this.setState({
-      [channel]: value
+      program_channel: event.target.value
     });
+    console.log(this.state);
+    console.log(event.target.value)
   };
   
   handleChangeStart(date) {
@@ -152,6 +153,14 @@ class PostProgram extends Component {
   }
 
   componentDidMount() {
+    const isLoggedIn = !!localStorage.getItem('token');
+    console.log(isLoggedIn);
+    if(isLoggedIn) {
+      this.setState({
+        auth: true
+      })
+    }
+
     const URL_LOGINPAGE = process.env.REACT_APP_API_LOGINPAGE;
     axios
       .get(URL_LOGINPAGE, {

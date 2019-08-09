@@ -20,6 +20,8 @@ class UserLogin extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         const URL_AUTHENTICATE = process.env.REACT_APP_API_AUTHENTICATE;
+        console.log('hi')
+
         axios({
             method: 'post',
             url: URL_AUTHENTICATE,
@@ -30,7 +32,11 @@ class UserLogin extends Component {
             .then(res => {
                 if (res.status === 200) {
                     localStorage.setItem('token', res.data.token);
-                    this.props.history.push('/postProgram');
+                    this.props.history.push({
+                        pathname: '/postProgram',
+                        state: { loggedIn: true }
+                      });
+                      console.log('hi')
                 } else {
                     const error = new Error(res.error);
                     throw error;
