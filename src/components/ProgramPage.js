@@ -22,7 +22,7 @@ class ProgramPage extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-lg-8" style={{ backgroundColor: "#3333CC" }}>
+        <div className="col-lg-8" style={{ backgroundColor: "#fff" }}>
           <h3>{this.state.currentProgram.program_name}</h3>
           <p>{this.state.currentProgram.program_name}</p>
         </div>
