@@ -12,11 +12,11 @@ let Program = new Schema({
   },
   firstDate: {
     type: String,
-    format: Date
+    default: Date
   },
   nextDate: {
     type: String,
-    format: Date
+    default: Date
   }
 },{
   timestamps: {
