@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
-const MONGO_URL = process.env.REACT_APP_MONGO_URL;
+//const mongoose = require("mongoose");
+//require("dotenv").config();
+//const MONGO_URL = process.env.REACT_APP_MONGO_URL;
 
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true

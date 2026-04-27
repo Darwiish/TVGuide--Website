@@ -4,11 +4,11 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const cors = require("cors"); /* CORS is a node.js package for providing a Connect/Express middleware that can be used to */
 const mongoose = require("mongoose");
-const DbConnection = require("./DataAccess/DbConnection");
+//const DbConnection = require("./DataAccess/DbConnection");
 const jwt = require("jsonwebtoken");
 const Program = require('./DataAccess/ProgramSchema.model');
 
-require("dotenv").config();
+//require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 app.use(cors());
 
